@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biner 9.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Quicksand&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+      background-size: 400% 400%;
+      animation: gradient 20s ease infinite;
+      color: #fff;
+    }
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8rem;
+      text-shadow: 0 0 10px #ff6ec7;
+    }
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      color: #ffe8f0;
+      margin-bottom: 1.5rem;
+    }
+    img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin: 20px auto;
+      box-shadow: 0 0 20px #fff;
+    }
+    .intro {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+    .links a {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: #fff;
+      transition: transform 0.3s ease;
+    }
+    .links a:hover {
+      transform: scale(1.2);
+    }
+    .quote {
+      margin: 2rem auto;
+      font-style: italic;
+      opacity: 0.9;
+    }
+    .about {
+      margin: 2rem 0;
+    }
+    details {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    form {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    form h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+    }
+    button {
+      display: block;
+      margin: 1rem auto 0;
+      background: #ff6ec7;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ff9ed4;
+    }
+    label {
+      margin-top: 1rem;
+      display: block;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Naufal Fadhillah</h1>
+    <h2>Biner 9.0</h2>
+    <img src="nopall.jpg" alt="Naufal's Photo">
+    <p class="intro">A quiet heart, a thoughtful mind, and a soul that still believes in hope. Welcome to my space.</p>
+    <div class="links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fas fa-envelope"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+    <div class="quote">"Even in the silence, I am learning to speak with light."</div>
+    <div class="about">
+      <details>
+        <summary>🌛 About Me</summary>
+        <p>I'm Naufal — someone who's grown through hard nights and still believes in soft mornings. I make things, I feel deeply, and I try to give kindness where I can.</p>
+      </details>
+    </div>
+    <form id="form-kesehatan">
+      <h3>📜 Data Penting & Kesehatan</h3>
+      <input type="text" name="nama" placeholder="Nama Lengkap" required>
+      <input type="text" name="npm" placeholder="NPM" required>
+      <input type="text" name="ortu" placeholder="Nama Orang Tua/Wali" required>
+      <input type="tel" name="hpOrtu" placeholder="No. HP Ortu/Wali" required>
+      <input type="tel" name="hpTeman" placeholder="No. HP Teman Terdekat di Bina" required>
+      <input type="text" name="alamat" placeholder="Tempat Tinggal di Bina & Alamat" required>
+      <label>Apakah kamu memiliki alergi terhadap makanan tertentu?</label>
+      <select name="alergi" required>
+        <option value="">-- Pilih --</option>
+        <option value="ya">Ya</option>
+        <option value="tidak">Tidak</option>
+      </select>
+      <input type="text" name="alergiApa" placeholder="Sebutkan alerginya (jika tidak ada, isi '-')" required>
+      <label>Apakah kamu memiliki riwayat penyakit bawaan/kronis?</label>
+      <select name="penyakit" required>
+        <option value="">-- Pilih --</option>
+        <option value="ya">Ya</option>
+        <option value="tidak">Tidak</option>
+      </select>
+      <input type="text" name="penyakitApa" placeholder="Sebutkan penyakitnya (jika tidak ada, isi '-')" required>
+      <button type="submit">Kirim</button>
+    </form>
+  </div>
+  <script>
+    const form = document.getElementById('form-kesehatan');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      fetch("https://script.google.com/macros/s/AKfycbzaWnU5b_RXdG8rIxsJwKF8TYVLlRsWktFLGPlwqV4Gw4uP6wTvubkln-6i3HtELzWkWg/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
+      })
+      .then(res => res.text())
+      .then(msg => {
+        alert("Data berhasil dikirim! 🙌");
+        form.reset();
+      })
+      .catch(err => {
+        alert("Gagal mengirim data. Coba lagi.");
+        console.error(err);
+      });
+    });
+  </script>
+</body>
+</html>
